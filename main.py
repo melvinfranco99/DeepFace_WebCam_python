@@ -2,7 +2,9 @@ import cv2
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-cap = cv2.VideoCapture(1)
+# 0 para WebCam, 2 para OBS
+cap = cv2.VideoCapture(0) # Este es el numero que hay que cambiar para cambiar la cama (ir probando 0, 1, 2...). 
+
 
 while True:
     _, img = cap.read()
@@ -14,4 +16,5 @@ while True:
     k = cv2.waitKey(30)
     if k == 27: #27 es la tecla ESC
         break
+
 cap.release()
